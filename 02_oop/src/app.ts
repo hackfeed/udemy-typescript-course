@@ -1,5 +1,6 @@
 interface Named {
   name: string;
+  outputName?: string;
 }
 
 interface Greetable extends Named {
