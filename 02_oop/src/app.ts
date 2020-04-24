@@ -5,7 +5,7 @@ class Department {
     this.name = name;
   }
 
-  describe(this: Departments) {
+  describe(this: Department) {
     console.log("Department: " + this.name);
   }
 }
