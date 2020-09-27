@@ -11,15 +11,10 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     insertAtStart: boolean,
     newElementId?: string
   ) {
-    this.templateElement = document.getElementById(
-      templateId
-    )! as HTMLTemplateElement;
+    this.templateElement = document.getElementById(templateId)! as HTMLTemplateElement;
     this.hostElement = document.getElementById(hostElementId)! as T;
 
-    const importedNode = document.importNode(
-      this.templateElement.content,
-      true
-    );
+    const importedNode = document.importNode(this.templateElement.content, true);
     this.element = importedNode.firstElementChild as U;
     if (newElementId) {
       this.element.id = newElementId;
@@ -30,7 +25,7 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 
   private attach(insertAtBeginning: boolean) {
     this.hostElement.insertAdjacentElement(
-      insertAtBeginning ? 'afterbegin' : 'beforeend',
+      insertAtBeginning ? "afterbegin" : "beforeend",
       this.element
     );
   }
